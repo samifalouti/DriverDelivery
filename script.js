@@ -91,6 +91,25 @@ function displayFormList() {
 }
 
 function sendForm() {
-    // Simulate sending the form
-    console.log("Form sent successfully!");
+    const cityName = document.getElementById("city").value;
+    const streetName = document.getElementById("street").value;
+
+    // Find users with the same city and street
+    const recipients = users.filter(user => user.cityId === cityName && user.streetId === streetName);
+
+    // Simulate sending the form to each recipient
+    recipients.forEach(recipient => {
+        // You can send the form to the recipient here
+        console.log(`Form sent to ${recipient.username}`);
+        // Here you would send the form to the recipient using the form details
+        // For the sake of demonstration, let's just log it to the console
+        console.log(`Form details: City: ${cityName}, Street: ${streetName}`);
+    });
+
+    // Clear the form fields
+    document.getElementById("city").value = "";
+    document.getElementById("street").value = "";
+
+    alert("Form sent successfully!");
 }
+
