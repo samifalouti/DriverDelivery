@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loginForm" class="container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="container" style="display:none;">
+        <h2>Admin Panel</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone">
+        <label for="city">City:</label>
+        <input type="text" id="adminCity">
+        <label for="street">Street:</label>
+        <input type="text" id="adminStreet">
+        <button onclick="sendForm()">Send Form</button>
+    </div>    
+
+    <!-- User Panel -->
+    <div id="userPanel" class="container" style="display:none;">
+        <h2>Welcome, <span id="loggedInUser"></span>!</h2>
+        <button onclick="logout()">Logout</button>
+        <div id="formList">
+            <!-- Form list will be displayed here -->
+        </div>
+        <p>Total Accepted Lists: <span id="acceptCount">0</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
