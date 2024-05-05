@@ -101,9 +101,9 @@ function sendForm() {
     recipients.forEach(recipient => {
         // You can send the form to the recipient here
         console.log(`Form sent to ${recipient.username}`);
-        // Here you would send the form to the recipient using the form details
-        // For the sake of demonstration, let's just log it to the console
-        console.log(`Form details: City: ${cityName}, Street: ${streetName}`);
+        // Update the recipient's acceptCount and save it to the session storage
+        recipient.acceptCount++;
+        sessionStorage.setItem(recipient.username + "_acceptCount", recipient.acceptCount);
     });
 
     // Clear the form fields
@@ -112,4 +112,5 @@ function sendForm() {
 
     alert("Form sent successfully!");
 }
+
 
